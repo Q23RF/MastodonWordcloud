@@ -14,7 +14,8 @@ response = requests.get("https://{instance}/api/v1/accounts/lookup?acct={handle}
     instance=my_instance, handle=my_handle))
 my_id = json.loads(response.text)['id']
 
-response = requests.get("https://{instance}/api/v1/accounts/{id}/statuses".format(instance=my_instance, id=my_id))
+response = requests.get("https://{instance}/api/v1/accounts/{id}/statuses".format(
+   instance=my_instance, id=my_id))
 statuses = json.loads(response.text)
 last = statuses[-1]['id']
 toots = ""
